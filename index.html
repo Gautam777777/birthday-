@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: url("./img/WhatsApp Image 2023-07-18 at 1.08.13 PM.jpeg") repeat;
+            animation: moveBackground 10s linear infinite;
+        }
+
+        @keyframes moveBackground {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: -200px -200px;
+            }
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            perspective: 1000px;
+        }
+
+        .animated-background {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotateX(35deg);
+            transform-style: preserve-3d;
+            animation: rotate 10s linear infinite;
+        }
+
+        .animated-background div {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            animation: animate 2s linear infinite;
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: translateZ(-1000px) rotateX(35deg) rotateY(0deg);
+            }
+            100% {
+                transform: translateZ(-1000px) rotateX(35deg) rotateY(360deg);
+            }
+        }
+
+        @keyframes animate {
+            0% {
+                transform: translateZ(5000px) rotateX(360deg) rotateY(360deg);
+                opacity: 1;
+            }
+            50% {
+                transform: translateZ(5000px) rotateX(360deg) rotateY(360deg);
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateZ(5000) rotateX(360deg) rotateY(360deg);
+                opacity: 1;
+            }
+        }
+
+        .birthday-wish {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 28px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            animation: fade-in 2s ease-in-out;
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .butterfly {
+            position: absolute;
+            top: 30%;
+            left: 40%;
+            transform: translate(-50%, -50%);
+            animation: butterfly-fly 3s linear infinite;
+        }
+
+        .butterfly img {
+            width: 80px;
+            height: auto;
+            transform-origin: center center;
+        }
+
+        @keyframes butterfly-fly {
+            0% {
+                transform: translateX(-50%) translateY(-50%) rotate(0deg);
+            }
+            50% {
+                transform: translateX(150%) translateY(-100%) rotate(90deg);
+            }
+            100% {
+                transform: translateX(-50%) translateY(-50%) rotate(180deg);
+            }
+        }
+
+        .g-heading {
+            margin-left: 400px;
+            margin-top: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-primary fw-bold g-heading">Happy Birthday Miss M</h1>
+        <div class="animated-background">
+            <div style="background-color: #FF4136;"></div>
+            <div style="background-color: #2ECC40;"></div>
+            <div style="background-color: #0074D9;"></div>
+            <div style="background-color: #FFDC00;"></div>
+            <div style="background-color: #B10DC9;"></div>
+            <div style="background-color: #FF851B;"></div>
+        </div>
+        <div class="butterfly">
+            <img src="img/butterfly1.jpg" alt="Butterfly">
+        </div>
+    </div>
+
+    <div class="birthday-wish">
+        <h1 class="text-primary fw-bold">Happy Birthday Miss M!</h1>
+        <p class="text-primary">Wishing you a fantastic day filled with joy and laughter.</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>
