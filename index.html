@@ -158,9 +158,13 @@
             height: auto;
         }
     </style>
+    
 </head>
 <body>
-    <audio src="./sounds/Good_Morning_to_All.mp3" autoplay></audio>
+    <audio id="myAudio" autoplay>
+        <source src="./sounds/Good_Morning_to_All.mp3" type="audio/mpeg">
+    </audio>
+
     <div class="container">
         <h1 class="text-primary fw-bold g-heading">Happy Birthday Miss M</h1>
         <div class="animated-background">
@@ -196,7 +200,14 @@
         <h1 class="text-primary fw-bold">Happy Birthday Miss M!</h1>
         <p class="text-primary">Wishing you a fantastic day filled with joy and laughter.</p>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script>
+        // Wait for the DOM to load
+        document.addEventListener('DOMContentLoaded', function() {
+          // Get the audio element by its ID
+          var audio = document.getElementById('myAudio');
+          // Play the audio
+          audio.play();
+        });
+    </script>
 </body>
 </html>
